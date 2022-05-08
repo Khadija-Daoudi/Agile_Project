@@ -15,6 +15,7 @@
     if( count($user) > 0){
 
       session_start();
+      $_SESSION['id'] = $user['id'];
       $_SESSION['email'] = $user['email'];
       $_SESSION['nom'] = $user['nom'];
       $_SESSION['prenom'] = $user['prenom'];

@@ -35,13 +35,19 @@
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><?php echo $produit['prix'] ?></li>
-    
-      
-
-    
+        
   </ul>
-  
+    
+<div class ="col-12 m-2">
+  <form class="d-flex" action="actions/commander.php" method="POST">
+
+  <input type="hidden" value="<?php echo $produit['id'] ?>" name="produit">
+  <input type="number" class ="form-control" name="quantite" step="1" placeholder="Quantité du produit...">
+  <button type="submit" class = "btn btn-primary">Commander</button>
+  </form>
 </div>
+</div>
+
     </div>
 
       
