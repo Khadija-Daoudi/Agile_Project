@@ -48,18 +48,6 @@ session_start();
  $_SESSION['panier'][1] += $total;
  $_SESSION['panier'][3][]=array($quantite , $total , $date ,$id_produit ,$produit['nom'] );
 
-
-//   //creation de panier
-
-//   $requette_panier = "INSERT INTO paniers(visiteur,total,date_creation) VALUES('$visiteur','$total','$date')";
-//   //execution_requett_panier
-// $resultat = $conn->query($requette_panier);
-// $panier_id = $conn->lastInsertId();
-
-// //ajouter commande 
-// $requette = "INSERT INTO commandes(quantite,total,panier,date_creation,date_modification,produit) VALUES('$quantite', '$total', '$panier_id', '$date', '$date', '$id_produit' ) ";
-
-// //execution 
-// $resultat = $conn->query($requette);
-// ?>
-header('location:../papier.php')
+ 
+ header('location:../papier.php')
+ ?>
