@@ -21,6 +21,7 @@
       $_SESSION['prenom'] = $user['prenom'];
       $_SESSION['mdp'] = $user['mdp'];
       $_SESSION['telephone'] = $user['telephone'];
+      $_SESSION['etat'] = $user['etat'];
 
       //function_alert("Adresse mail ou mot de passe invalide");
       header("location:profil.php");

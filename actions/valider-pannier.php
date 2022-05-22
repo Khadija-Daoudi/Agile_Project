@@ -1,4 +1,5 @@
 <?php
+session_start();
 //selectionner le produit avec ID
 
 include "../inc/functions.php";
@@ -31,8 +32,10 @@ foreach($commandes as $commande){
         $resultat = $conn->query($requette);
 }
 
-
-
+// supprimer la panier
+$_SESSION['panier'] = null ; 
+// redirection vers la page index 
+header('location:../index.php')
 
 
 

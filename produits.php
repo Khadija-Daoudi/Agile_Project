@@ -26,41 +26,51 @@
   ?>
 
     <div class="row col-12 mt-4">
-
-      <div class="card col-8 offset-2">
-  <img src="img/<?php echo $produit['image']; ?>" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"><?php echo $produit['nom'] ?></h5>
-    <p class="card-text"><?php echo $produit['description'] ?></p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><?php echo $produit['prix'] ?></li>
-        
-  </ul>
-    
-<div class ="col-12 m-2">
-  <form class="d-flex" action="actions/commander.php" method="POST">
-
-  <input type="hidden" value="<?php echo $produit['id'] ?>" name="produit">
-  <input type="number" class ="form-control" name="quantite" step="1" placeholder="Quantité du produit...">
-  <button type="submit" class = "btn btn-primary">Commander</button>
-  </form>
-</div>
-</div>
-
-    </div>
-
+    <?php if($_SESSION['etat']==0){ 
+      // utilisateur non valide
+      print '<div class="alert alert-danger">
+              Compte non valide
+      </div>';
+      }  
+      ?>
       
 
+      <div class="card col-8 offset-2">
+            <img src="img/<?php echo $produit['image']; ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><?php echo $produit['nom'] ?></h5>
+              <p class="card-text"><?php echo $produit['description'] ?></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><?php echo $produit['prix'] ?></li>
+              <?php 
+                    foreach($categories as $index =>$c){
+                      if ($c['id'] == $produit['categorie']){
+                        print '<button class="btn btn-success mb-2">'.$c['nom'].'</button>';
+                      }
+                    }
+              ?>
+                    
+            </ul>
+            <div class ="col-12 m-2">
+            <form class="d-flex" action="actions/commander.php" method="POST">
+
+                    <input type="hidden" value="<?php echo $produit['id'] ?>" name="produit">
+                    <input type="number" class ="form-control" name="quantite" step="1" placeholder="Quantité du produit...">
+                    <button type="submit" <?php if($_SESSION['etat']==0){ echo"disabled" ;} ?> class = "btn btn-primary">Commander</button>
+            </form>
+          </div>
+          </div>
+
+        </div>
+
+      
+<?php 
+
+include "inc/footer.php";
+
+?>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </html>
-
-<!-- <?php
-          //foreach($cat as $index => $c){
-            //if ($c['id'] == $produit['categorie']){
-             // print '<button class="btn btn-success mb-2">'.$c['nom'].'</button>';
-            //}
-          //}
-      ?>-->
