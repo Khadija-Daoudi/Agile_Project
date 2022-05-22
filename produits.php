@@ -57,7 +57,7 @@
 
                     <input type="hidden" value="<?php echo $produit['id'] ?>" name="produit">
                     <input type="number" class ="form-control" name="quantite" step="1" placeholder="Quantité du produit...">
-                    <button type="submit" <?php if($_SESSION['etat']==0){ echo"disabled" ;} ?> class = "btn btn-primary">Commander</button>
+                    <button type="submit" <?php if(isset($_SESSION['etat']) && $_SESSION['etat']==0 || !isset($_SESSION['etat'])){ echo"disabled" ;} ?> class = "btn btn-primary">Commander</button>
             </form>
           </div>
           </div>

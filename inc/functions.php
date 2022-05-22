@@ -143,5 +143,21 @@ function getStock(){
 
 }
 
+function updatestock ($date){
+	$conn = connect();
+	$requette = "SELECT s.id , p.nom , s.quantite FROM produits p, stocks s WHERE p.id=s.produit";
+	$resultat = $conn -> query($requette);
+	$stocks = $resultat->fetchAll();
+	return $stocks;
+}
+function getAllCommandes(){
+	$conn = connect();
+	$requette = "SELECT v.nom , v.prenom , v.telephone , p.total , p.etat , p.date_creation , p.id FROM paniers p, visiteurs v WHERE p.visiteur = v.id ";
+	$resultat = $conn -> query($requette);
+	$stocks = $resultat->fetchAll();
+	return $stocks;
+
+}
+
 
 ?>

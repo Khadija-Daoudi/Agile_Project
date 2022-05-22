@@ -31,7 +31,12 @@
                   Stocks
                 </a>
               </li>
-              <li c
+              <li class="nav-item">
+                <a class="nav-link" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/agile/admin/commandes/liste.php">
+                  <span data-feather="bar-chart-2"></span>
+                  Commandes
+                </a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="bar-chart-2"></span>
