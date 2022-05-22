@@ -26,7 +26,7 @@
   ?>
 
     <div class="row col-12 mt-4">
-    <?php if($_SESSION['etat']==0){ 
+    <?php if(isset($_SESSION['etat']) && $_SESSION['etat']==0){ 
       // utilisateur non valide
       print '<div class="alert alert-danger">
               Compte non valide
