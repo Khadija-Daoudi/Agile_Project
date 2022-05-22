@@ -152,7 +152,7 @@ function updatestock ($date){
 }
 function getAllCommandes(){
 	$conn = connect();
-	$requette = "SELECT v.nom , v.prenom , v.telephone , p.total , p.etat , p.date_creation , p.id FROM paniers p, visiteurs v WHERE p.visiteur = v.id ";
+	$requette = "SELECT v.nom , v.prenom , v.telephone , p.total , p.etat , p.date_creation , p.id FROM paniers p, visiteur v WHERE p.visiteur = v.id ";
 	$resultat = $conn -> query($requette);
 	$stocks = $resultat->fetchAll();
 	return $stocks;

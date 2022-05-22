@@ -61,7 +61,7 @@ if(isset($_SESSION['panier'])){
                     foreach($commandes as $index=> $commande){
                         print ' <tr>
                         <th scope="row">'.($index+1).'</th>
-                        <td>'.$commande[5].'</td>
+                        
                         <td>'.$commande[0].' pieces</td>
                         <td>'.$commande[1].'DTT </td>
                         <td><a href="actions/enlever-produit-panier.php?id='.$index.'" class="btn btn-danger">Supprimer</a></td>

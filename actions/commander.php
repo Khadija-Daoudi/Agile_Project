@@ -49,5 +49,5 @@ session_start();
  $_SESSION['panier'][3][]=array($quantite , $total , $date ,$id_produit ,$produit['nom'] );
 
  
- header('location:../papier.php')
+ header('location:../panier.php')
  ?>

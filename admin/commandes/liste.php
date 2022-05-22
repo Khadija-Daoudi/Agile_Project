@@ -2,7 +2,7 @@
 session_start();
 
 include "../../inc/functions.php";
-$commande = getAllCommandes();
+$commandes = getAllCommandes();
 
 ?>
 
@@ -110,7 +110,7 @@ $commande = getAllCommandes();
         $i++;
         print '<tr>
       <th scope="row">'.$i.'</th>
-      <td>'.$c['nom'].' '.$c['prenom']'</td>
+      <td>'.$c['nom'].' '.$c['prenom'].'</td>
       <td>'.$c['total'].'</td>
       <td>'.$c['date_creation'].'</td>
       <td>
@@ -122,6 +122,7 @@ $commande = getAllCommandes();
 
       </td>
     </tr>';
+    
        }
     ?>
     

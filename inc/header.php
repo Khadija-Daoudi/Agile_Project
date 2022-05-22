@@ -34,7 +34,7 @@
         </li>';
         }else{
           print '<li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="panier.php">panier<span>( 0)</span></a>
+          <a class="nav-link active" aria-current="page" href="panier.php">panier<span></span></a>
         </li>';
         }
          
